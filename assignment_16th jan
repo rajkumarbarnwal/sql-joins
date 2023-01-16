@@ -1,1 +1,6 @@
 select emp, deptno, salary from ( select emp, deptno, salary, dense_rank() over(partition by deptno order by salary desc) as rn from employee) as temp where rn = 2;
+
+output---------
+B    10     2000
+F    20     8000
+G    30     17000
